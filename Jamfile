@@ -1,0 +1,9 @@
+SubDir HAIKU_TOP src apps cherryblossom ;
+
+UsePrivateHeaders interface shared storage tracker ;
+
+Application CherryBlossom :
+	CherryBlossom.cpp
+	: be liblocale.so libcolumnlistview.a libshared.a $(TARGET_LIBSUPC++)
+;
+
