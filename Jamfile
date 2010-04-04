@@ -4,6 +4,14 @@ UsePrivateHeaders interface shared storage tracker ;
 
 Application CherryBlossom :
 	CherryBlossom.cpp
+	CherryBlossomWindow.cpp
 	: be liblocale.so libcolumnlistview.a libshared.a $(TARGET_LIBSUPC++)
 ;
 
+DoCatalogs CherryBlossom :
+	x-vnd.CherryBlossom
+	:
+	CherryBlossom.cpp
+	CherryBlossomWindow.cpp
+	: en.catalog
+	;
