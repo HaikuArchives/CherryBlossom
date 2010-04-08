@@ -2,7 +2,20 @@ SubDir HAIKU_TOP src apps cherryblossom ;
 
 UsePrivateHeaders interface shared storage tracker ;
 
+local sourceDirs =
+	interface
+;
+
 Application CherryBlossom :
+	#interface
+	DrawingTidbits.cpp
+	PeakView.cpp
+	PositionToolTip.cpp
+	SeekSlider.cpp
+	TransportButton.cpp
+	VolumeSlider.cpp
+	
+	# Cherry Blossom
 	AlbumView.cpp
 	ArtistView.cpp
 	CherryBlossom.cpp
