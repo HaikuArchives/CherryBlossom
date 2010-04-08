@@ -9,7 +9,7 @@ Application CherryBlossom :
 	CherryBlossomWindow.cpp
 	CherryBlossomView.cpp
 	GenreView.cpp
-	InfoView.cpp
+	MusicView.cpp
 	PlayListView.cpp
 	SearchView.cpp
 	SongView.cpp
@@ -26,7 +26,7 @@ DoCatalogs CherryBlossom :
 	CherryBlossomWindow.cpp
 	CherryBlossomView.cpp
 	GenreView.cpp
-	InfoView.cpp
+	MusicView.cpp
 	PlayListView.cpp
 	SearchView.cpp
 	SongView.cpp

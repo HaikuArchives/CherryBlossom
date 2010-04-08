@@ -10,7 +10,6 @@
 #include "ArtistView.h"
 #include "CherryBlossomView.h"
 #include "GenreView.h"
-#include "InfoView.h"
 #include "PlayListView.h"
 #include "SearchView.h"
 #include "SongView.h"

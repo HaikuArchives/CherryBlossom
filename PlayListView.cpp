@@ -33,6 +33,8 @@ PlayListView::PlayListView(BRect frame, const char* name,
 	fListView->AddItem(new BStringItem("Library"));
 	
 	layout->AddView(fListView);
+	
+	fListView->SetViewColor((rgb_color){210,210,210,255});
 }
 
 PlayListView::~PlayListView()
@@ -42,5 +44,4 @@ PlayListView::~PlayListView()
 void
 PlayListView::MessageReceived(BMessage* message)
 {
-	//printf("Message received in playlistview \n");
 }

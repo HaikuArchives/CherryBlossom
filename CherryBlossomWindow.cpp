@@ -7,6 +7,7 @@
  */
  
 #include "CherryBlossomWindow.h"
+#include "MusicView.h"
 #include "PlayListView.h"
 
 #include <Application.h>
@@ -35,7 +36,7 @@ enum {
 
 CherryBlossomWindow::CherryBlossomWindow()
 	: BWindow(BRect(30, 30, 900, 600), "Cherry Blossom",
-		B_TITLED_WINDOW, B_AUTO_UPDATE_SIZE_LIMITS | B_NOT_ZOOMABLE)
+		B_TITLED_WINDOW, B_AUTO_UPDATE_SIZE_LIMITS)
 {	
 	_Init();
 }
@@ -70,14 +71,16 @@ CherryBlossomWindow::QuitRequested()
 	return false;
 }
 
+// #pragma mark - Private Methods
+
 
 void
 CherryBlossomWindow::_Init()
 {
 	fPlaylistView = new PlayListView(BRect(0,0,100,100),
 		"play list view", NULL, this);
-	fMusicView = new PlayListView(BRect(0,0,100,100),
-		"play list view", NULL, this);
+	fMusicView = new MusicView(BRect(0,0,100,100),
+		"music view");
 	_CreateGUI();
 }
 
@@ -106,10 +109,10 @@ CherryBlossomWindow::_CreateGUI()
 	BView* mainView = new BView("main view", 0, mainLayout);
 	
 
-	BSplitView* threadGroup = new BSplitView(B_HORIZONTAL);
-	threadGroup->SetName("Threads");
-	mainLayout->AddView(threadGroup);
-	BLayoutBuilder::Split<>(threadGroup)
+	BSplitView* mainGroup = new BSplitView(B_HORIZONTAL);
+	mainGroup->SetName("Main Group");
+	mainLayout->AddView(mainGroup);
+	BLayoutBuilder::Split<>(mainGroup)
 		.Add(fPlaylistView)
 		.Add(fMusicView);
 

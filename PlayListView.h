@@ -11,14 +11,12 @@
 
 #include <ListView.h>
 #include <Message.h>
-#include <ScrollView.h>
 #include <View.h>
 
 
 class PlayListView : public BView {
 public:
-					PlayListView(BRect frame,
-								const char* name,
+					PlayListView(BRect frame, const char* name,
 								BMessage* selectionMessage = NULL,
 								BHandler* target = NULL);
 					~PlayListView();
