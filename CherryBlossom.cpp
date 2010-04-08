@@ -7,28 +7,50 @@
  */
 
 #include "CherryBlossom.h"
+#include "CherryBlossomWindow.h"
 
 #include <Application.h>
+#include <Locale.h>
 
 #include <stdio.h>
+#include <stdlib.h>
+
 
 CherryBlossom::CherryBlossom()
 	: BApplication("application/x-vnd.CherryBlossom")
 {
+	fMainWindow = new CherryBlossomWindow();
 }
 
 CherryBlossom::~CherryBlossom()
 {
 }
 
-bool CherryBlossom::QuitRequested()
+bool
+CherryBlossom::QuitRequested()
 {
-	printf("Hello World\n");
+	if (fMainWindow->Lock()) {
+		fMainWindow->Quit();
+		fMainWindow = NULL;
+	}
+
 	return true;
 }
 
-int main(int argc, char* argv[])
+void
+CherryBlossom::ReadyToRun()
+{
+	be_locale->GetAppCatalog(&fCatalog);
+	
+	if (fMainWindow)
+		fMainWindow->Show();
+}
+
+int
+main(int argc, char* argv[])
 {
 	CherryBlossom app;
 	app.Run();
+	
+	return EXIT_SUCCESS;
 }

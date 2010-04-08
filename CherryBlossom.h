@@ -10,15 +10,19 @@
 #define CHERRY_BLOSSOM_H_
 
 #include <Application.h>
+#include <Catalog.h>
+#include <Window.h>
 
 class CherryBlossom : public BApplication {
 public:
 					CherryBlossom();
 					~CherryBlossom();
 
+	virtual void	ReadyToRun();
 	virtual bool	QuitRequested();
 private:
-
+	BWindow*		fMainWindow;
+	BCatalog		fCatalog;
 };
 
 #endif

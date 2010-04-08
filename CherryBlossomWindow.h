@@ -24,9 +24,16 @@ public:
 	virtual bool	QuitRequested();
 
 private:
+	void			_Init();
+	void			_CreateGUI();
+	BMenu*			_CreateMainMenu();
+
 	BView*			fMainView;
+	BView*			fPlaylistView;
+	BView*			fMusicView;
+
 	BMenu*			fFileMenu;
-	BMenuItem*		fNewPlayListMI;
+	BMenuItem*		fNewPlaylistMI;
 	BMenuItem*		fQuitMI;
 
 };

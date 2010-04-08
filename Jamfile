@@ -3,15 +3,32 @@ SubDir HAIKU_TOP src apps cherryblossom ;
 UsePrivateHeaders interface shared storage tracker ;
 
 Application CherryBlossom :
+	AlbumView.cpp
+	ArtistView.cpp
 	CherryBlossom.cpp
 	CherryBlossomWindow.cpp
+	CherryBlossomView.cpp
+	GenreView.cpp
+	InfoView.cpp
+	PlayListView.cpp
+	SearchView.cpp
+	SongView.cpp
+
 	: be liblocale.so libcolumnlistview.a libshared.a $(TARGET_LIBSUPC++)
 ;
 
 DoCatalogs CherryBlossom :
 	x-vnd.CherryBlossom
 	:
+	AlbumView.cpp
+	ArtistView.cpp
 	CherryBlossom.cpp
 	CherryBlossomWindow.cpp
+	CherryBlossomView.cpp
+	GenreView.cpp
+	InfoView.cpp
+	PlayListView.cpp
+	SearchView.cpp
+	SongView.cpp
 	: en.catalog
 	;
