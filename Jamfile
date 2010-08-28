@@ -4,7 +4,14 @@ UsePrivateHeaders interface shared storage tracker ;
 
 local sourceDirs =
 	interface
+	views
 ;
+
+local sourceDir ;
+for sourceDir in $(sourceDirs) {
+        SEARCH_SOURCE += [ FDirName $(HAIKU_TOP) src apps cherry-blossom $(sourceDir) ] ;
+}
+
 
 Application CherryBlossom :
 	#interface
@@ -12,7 +19,7 @@ Application CherryBlossom :
 	PeakView.cpp
 	PositionToolTip.cpp
 	SeekSlider.cpp
-	TransportButton.cpp
+	#TransportButton.cpp
 	VolumeSlider.cpp
 	
 	# Cherry Blossom
@@ -20,7 +27,6 @@ Application CherryBlossom :
 	ArtistView.cpp
 	CherryBlossom.cpp
 	CherryBlossomWindow.cpp
-	CherryBlossomView.cpp
 	GenreView.cpp
 	MusicView.cpp
 	PlayListView.cpp

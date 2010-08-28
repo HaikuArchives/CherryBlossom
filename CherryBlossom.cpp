@@ -40,7 +40,7 @@ CherryBlossom::QuitRequested()
 void
 CherryBlossom::ReadyToRun()
 {
-	be_locale->GetAppCatalog(&fCatalog);
+	//be_locale->GetAppCatalog(&fCatalog);
 	
 	if (fMainWindow)
 		fMainWindow->Show();

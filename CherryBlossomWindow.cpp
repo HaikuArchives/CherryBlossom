@@ -7,8 +7,8 @@
  */
  
 #include "CherryBlossomWindow.h"
-#include "MusicView.h"
-#include "PlayListView.h"
+#include "views/MusicView.h"
+#include "views/PlayListView.h"
 
 #include <Application.h>
 #include <Box.h>
