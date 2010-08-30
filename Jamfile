@@ -1,10 +1,12 @@
 SubDir HAIKU_TOP src apps cherryblossom ;
 
+UsePublicHeaders [ FDirName be_apps ] ;
 UsePrivateHeaders interface shared storage tracker ;
 
 local sourceDirs =
 	interface
 	views
+	taglib
 ;
 
 local sourceDir ;
@@ -33,7 +35,8 @@ Application CherryBlossom :
 	SearchView.cpp
 	SongView.cpp
 
-	: be liblocale.so libcolumnlistview.a libshared.a $(TARGET_LIBSUPC++)
+
+	: be liblocale.so libtag.so.1.5.0 libcolumnlistview.a libshared.a $(TARGET_LIBSUPC++)
 ;
 
 DoCatalogs CherryBlossom :

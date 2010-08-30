@@ -41,7 +41,7 @@ void
 CherryBlossom::ReadyToRun()
 {
 	//be_locale->GetAppCatalog(&fCatalog);
-	
+
 	if (fMainWindow)
 		fMainWindow->Show();
 }
