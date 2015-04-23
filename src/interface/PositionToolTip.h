@@ -6,7 +6,7 @@
 #define POSITION_TOOL_TIP_H
 
 
-#include <ToolTip.h>
+#include <private/interface/ToolTip.h>
 
 
 class PositionToolTip : public BToolTip {
